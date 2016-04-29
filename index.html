@@ -113,7 +113,6 @@
 <script type="text/javascript" src="js/leaflet.markercluster.js"></script>
 <script type="text/javascript" src="js/dc.leaflet.js"></script>
 <script type="text/javascript">
-
 //connect charts to their appropriate selectors
 var mapChart = dc_leaflet.markerChart("#dc-map-chart");
 var rowChart = dc.rowChart("#dc-row-chart");
@@ -123,7 +122,6 @@ var datatable = $('#dc-table-chart');
 //initial map view
 var defaultCenter = [42.69,25.42];
 var defaultZoom = 1;
-
 d3.json("data/nashPermits.json", function(data) {
 	var dateFormat = d3.time.format("%Y-%m-%dT%H:%M:%S");
     data.forEach( function(d,i) {
@@ -283,7 +281,6 @@ d3.json("data/nashPermits.json", function(data) {
 	//filter all charts when using the datatables search box
 	 $(":input").on('keyup',function(){
 		text_filter(tableDimension, this.value);//cities is the dimension for the data table
-
 	function text_filter(dim,q){
 		 if (q!='') {
 			dim.filter(function(d){
@@ -305,7 +302,6 @@ d3.json("data/nashPermits.json", function(data) {
 	//initialize other charts
 	dc.renderAll();
 });
-
 </script>
 </body>
 </html>
